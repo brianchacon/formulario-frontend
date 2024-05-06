@@ -4,6 +4,7 @@ import { BrowserRouter, Navigate, Route } from 'react-router-dom';
 import './App.css';
 
 import Home from './pages/Home';
+import Main from './pages/Main';
 import RoutesWithNotFound from './utilities/RoutesWithNotFound.utility';
 import { PrivateRoutes, PublicRoutes } from './models/routes';
 import Login from './pages/Login';
@@ -26,6 +27,7 @@ function App() {
             </Route>
             
             <Route path={PrivateRoutes.HOME} element={<Home />} />
+            <Route path={PrivateRoutes.MAIN} element={<Main />} />
           </RoutesWithNotFound>
         </BrowserRouter>
       </Suspense>
