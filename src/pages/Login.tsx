@@ -12,6 +12,7 @@ function Login() {
   let [showLogin, setShowLogin] = useState(true);
   let [isLoading, setIsLoading] = useState(false);
 
+  
   let [userName, setUserName] = useState("");
   let [password, setPassword] = useState("");
   let [name, setName] = useState("");
@@ -19,7 +20,9 @@ function Login() {
 
   
   function cambiarVista() {
+    
     setShowLogin(!showLogin);
+    
   }
 
   function cambioUserName(e:any) { setUserName(e.target.value) }
@@ -89,55 +92,65 @@ function Login() {
             return <div className='spinner'/>;
         } else {
             if (showLogin){
-                return     <div className="card-body">
-                <h2> LOGIN </h2>
-                <form action="" method="post">
-                  <div className="mb-3">
-                      <label className="form-label">Email address</label>
-                      <input type="email" className="form-control" placeholder="name@example.com"
-                      value={userName} onChange={cambioUserName}
-                      />
-                  </div>
-                  <div className="mb-3">
-                      <label className="form-label">Contraseña</label>
-                      <input type="password" className="form-control" placeholder="Contraseña"
-                      value={password} onChange={cambioPass}
-                      />
-                  </div>
-                </form>
-                <button className="btn btn-success" onClick={authenticate}>Acceder</button>
-              </div>;
+                return    <>
+                <div className="card-body">
+                  <h2> LOGIN </h2>
+                  <form action="" method="post">
+                    <div className="mb-3">
+                        <label className="form-label">Email address</label>
+                        <input type="email" className="form-control" placeholder="name@example.com"
+                        value={userName} onChange={cambioUserName}
+                        />
+                    </div>
+                    <div className="mb-3">
+                        <label className="form-label">Contraseña</label>
+                        <input type="password" className="form-control" placeholder="Contraseña"
+                        value={password} onChange={cambioPass}
+                        />
+                    </div>
+                  </form>
+                  <button className="btn btn-success" onClick={authenticate}>Acceder</button>
+                </div>
+                <div className="card-footer">
+                    <button onClick={cambiarVista}>Crear cuenta</button>
+                </div>
+              </>;
             } else {
-                return <div className="card-body">
-                <h2> Crear cuenta</h2>
-                <form action="" method="post">
-                  <div className="mb-3">
-                      <label className="form-label">Email address</label>
-                      <input type="email" className="form-control" placeholder="name@example.com"
-                      value={userName} onChange={cambioUserName}
-                      />
-                  </div>
-                  <div className="mb-3">
-                      <label className="form-label">Contraseña</label>
-                      <input type="password" className="form-control" placeholder="Contraseña"
-                      value={password} onChange={cambioPass}
-                      />
-                  </div>
-                  <div className="mb-3">
-                      <label className="form-label">Nombre</label>
-                      <input type="text" className="form-control" placeholder="Nombre"
-                      value={name} onChange={cambioName}
-                      />
-                  </div>
-                  <div className="mb-3">
-                      <label className="form-label">Apellido</label>
-                      <input type="text" className="form-control" placeholder="Apellido"
-                      value={lastname} onChange={cambioLastname}
-                      />
-                  </div>
-                </form>
-                <button className="btn btn-success" onClick={register}>Crear</button>
-              </div>;
+                return <>
+                  <div className="card-body">
+                  <h2> Crear cuenta</h2>
+                  <form action="" method="post">
+                    <div className="mb-3">
+                        <label className="form-label">Email address</label>
+                        <input type="email" className="form-control" placeholder="name@example.com"
+                        value={userName} onChange={cambioUserName}
+                        />
+                    </div>
+                    <div className="mb-3">
+                        <label className="form-label">Contraseña</label>
+                        <input type="password" className="form-control" placeholder="Contraseña"
+                        value={password} onChange={cambioPass}
+                        />
+                    </div>
+                    <div className="mb-3">
+                        <label className="form-label">Nombre</label>
+                        <input type="text" className="form-control" placeholder="Nombre"
+                        value={name} onChange={cambioName}
+                        />
+                    </div>
+                    <div className="mb-3">
+                        <label className="form-label">Apellido</label>
+                        <input type="text" className="form-control" placeholder="Apellido"
+                        value={lastname} onChange={cambioLastname}
+                        />
+                    </div>
+                  </form>
+                  <button className="btn btn-success" onClick={register}>Crear</button>
+                </div>
+                <div className="card-footer">
+                    <button onClick={cambiarVista}>Ya tengo cuenta</button>
+                </div>
+              </>;
             }
         }
     });
@@ -150,9 +163,6 @@ function Login() {
                 <div>
                     <h3>Acceso</h3>
                     {loadingFunction()}
-                    <div className="card-footer">
-                        <button onClick={cambiarVista}>Cambiar vista</button>
-                    </div>
                 </div>
             </div>
             <Toaster />       

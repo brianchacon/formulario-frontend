@@ -9,6 +9,13 @@ import RoutesWithNotFound from './utilities/RoutesWithNotFound.utility';
 import { PrivateRoutes, PublicRoutes } from './models/routes';
 import Login from './pages/Login';
 import AuthGuard from './guards/auth.guard';
+import Perfil from './pages/Perfil';
+import Disponibles from './pages/Disponibles';
+import Completadas from './pages/Completadas';
+import Capacitaciones from './pages/Capacitaciones';
+import Empleados from './pages/Empleados';
+import Grupos from './pages/Grupos';
+import Informes from './pages/Informes';
 
 function App() {
   const [count, setCount] = useState(0);
@@ -28,6 +35,14 @@ function App() {
             
             <Route path={PrivateRoutes.HOME} element={<Home />} />
             <Route path={PrivateRoutes.MAIN} element={<Main />} />
+
+            <Route path={PrivateRoutes.PROFILE} element={<Perfil />} />
+            <Route path={PrivateRoutes.COMPLETADAS} element={<Completadas />} />
+            <Route path={PrivateRoutes.DISPONIBLES} element={<Disponibles />} />
+            <Route path={PrivateRoutes.CAPACITACIONES} element={<Capacitaciones />} />
+            <Route path={PrivateRoutes.EMPLEADOS} element={<Empleados />} />
+            <Route path={PrivateRoutes.GRUPOS} element={<Grupos />} />
+            <Route path={PrivateRoutes.INFORMES} element={<Informes />} />
           </RoutesWithNotFound>
         </BrowserRouter>
       </Suspense>
