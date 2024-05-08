@@ -2,6 +2,7 @@
   min-height: 750px;
   padding: 2rem;
   padding-top: 3.5em;
+  width: 100%;
 }
 
 .logo {
@@ -38,6 +39,81 @@
     transform: rotate(360deg);
   }
 }
+
+/* Página CRUD y lista */
+.page-head-border{
+  background-color: aliceblue;
+  background: repeating-linear-gradient(135deg, rgba(0, 0, 0, 0) 5px, #00000000 15px, #313131 15px, #313131 20px);
+  padding: 1em 2.5em;
+}
+.page-head{
+  padding: 1em 2.5em;
+  border-bottom: 2PX solid #3170f2;
+  display: flex;
+  flex-direction: column;
+}
+  .page-head-top-data{
+    display: flex;
+    justify-content: flex-start;
+  }
+  .page-head-top-data-text{color: #888;margin-right: 3px;}
+  .page-head-top-data-text-value{color: #3d6c98;}
+
+  .page-head-action{
+    display: flex;
+    justify-content: flex-end;
+  }
+  .page-head-action button{
+    border: 1px solid #3a994c;
+    background: #0000000d;
+    margin-right: 5px;
+  }
+  .page-head-action button:hover{
+    cursor: pointer;
+    border: 1px solid #3ca750;
+    background: #00000028;
+  }
+.page-body{display: flex;flex-direction:column;padding: 10px;}
+  .list-filter{padding: 5px;display: flex;margin-bottom: 5px;justify-content: space-between;}
+    .list-filter-left{
+      display: flex;
+    }
+    .list-filter-right{display: flex;}
+      .buscar-text{color: #888;margin-right: 8px;}
+      .buscar-input{
+        border: 1px solid #3a994c;
+        background: #0000000d;
+        border-radius: 5px;
+        padding: 0 15px;
+      }
+  .list-container{margin-top: 5px;}
+  .list-header{ display: flex;justify-content: flex-start;margin-bottom: 5px;}
+    .list-header-text{color: #888;margin-right: 5px;}
+    .list-header-text-value{color: #3d6c98;}
+  .list-elem{display: flex; margin-top: 5px;margin-bottom: 5px;}
+    .list-elem-content{display: flex;border: 1px solid #3d6c98;margin-right: 5px;}
+  .list-elem-action{display: flex;}
+  .button-green{
+    border: 1px solid #3a994c;
+    background: #0000000d;
+    margin-right: 5px;
+  }
+  .button-green:hover{
+    cursor: pointer;
+    border: 1px solid #3ca750;
+    background: #00000028;
+  }
+  .button-red{
+    border: 1px solid #b65858;
+    background: #0000000d;
+    margin-right: 5px;
+  }
+  .button-red:hover{
+    cursor: pointer;
+    border: 1px solid #d35353;
+    background: #00000028;
+  }
+
 
 @media (prefers-reduced-motion: no-preference) {
   a:nth-of-type(2) .logo {

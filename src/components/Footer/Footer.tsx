@@ -5,7 +5,7 @@ function Footer() {
           <div className='footer-elem'>
               <div>
                   <a href="/">
-                    <h3>CapacitAI</h3>
+                    <h3>CapacitIA</h3>
                   </a> 
               </div>
           </div>       
